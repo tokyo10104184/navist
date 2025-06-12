@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import { useZoneMode } from '@/app/contexts'; // Assuming index.ts in contexts exports this
