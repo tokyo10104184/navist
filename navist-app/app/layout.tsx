@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans"; // Updated import for GeistSans
-import { GeistMono } from "geist/font/mono";   // Updated import for GeistMono
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
-import Layout from "@/app/components/Layout/Layout"; // Path to the new Layout component
-import { ZoneModeProvider } from "@/app/contexts/ZoneModeContext"; // Corrected path
+import Layout from "@/app/components/Layout/Layout";
+import { ZoneModeProvider } from "@/app/contexts/ZoneModeContext";
 
 export const metadata: Metadata = {
   title: "Navist - Your Personal AI Learning Companion",
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="antialiased"> {/* antialiased can stay on body or move to html */}
         <ZoneModeProvider>
           <Layout>
             {children}

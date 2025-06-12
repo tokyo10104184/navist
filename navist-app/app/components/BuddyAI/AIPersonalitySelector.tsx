@@ -1,10 +1,8 @@
 import React from 'react';
 
-interface AIPersonalitySelectorProps {
-  // Props can be added here later, e.g., personalities list, onSelect callback
-}
+// Removed empty interface AIPersonalitySelectorProps
 
-const AIPersonalitySelector: React.FC<AIPersonalitySelectorProps> = () => {
+const AIPersonalitySelector: React.FC = () => { // Changed to React.FC
   return (
     <div className="p-2 border-b mb-4">
       <label htmlFor="personality-select" className="block text-sm font-medium text-gray-700 mb-1">

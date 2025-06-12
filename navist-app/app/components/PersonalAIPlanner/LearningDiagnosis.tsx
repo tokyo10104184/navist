@@ -1,10 +1,8 @@
 import React from 'react';
 
-interface LearningDiagnosisProps {
-  // Props can be added here later, e.g., onAnalysisComplete callback
-}
+// Removed empty interface LearningDiagnosisProps
 
-const LearningDiagnosis: React.FC<LearningDiagnosisProps> = () => {
+const LearningDiagnosis: React.FC = () => { // Changed to React.FC
   return (
     <div className="p-4 border rounded-lg shadow-md bg-white mb-6">
       <h2 className="text-xl font-semibold mb-4 text-gray-700">Learning Diagnosis</h2>

@@ -16,7 +16,7 @@ const ParentReport: React.FC<ParentReportProps> = ({
 }) => {
   return (
     <div className="p-6 border rounded-lg shadow-lg bg-white mb-6">
-      <h2 className="text-2xl font-bold mb-4 text-blue-700">Parent's Report</h2>
+      <h2 className="text-2xl font-bold mb-4 text-blue-700">Parent&apos;s Report</h2>
 
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-800">Student Information</h3>
@@ -32,7 +32,7 @@ const ParentReport: React.FC<ParentReportProps> = ({
       <div>
         <h3 className="text-lg font-semibold text-gray-800">AI-Powered Objective Analysis</h3>
         <div className="p-3 rounded-md bg-blue-50 border border-blue-200">
-          <p className="text-blue-800 italic">"{aiAnalysis}"</p>
+          <p className="text-blue-800 italic">&quot;{aiAnalysis}&quot;</p>
         </div>
       </div>
 

@@ -49,7 +49,7 @@ const MyLibrary: React.FC<MyLibraryProps> = ({ stage, userName = "Learner" }) =>
       );
       break;
     case 3:
-      stageDescription = "A Scholar's Haven";
+      stageDescription = "A Scholar&apos;s Haven";
       libraryElements = (
         <div className="p-8 border-2 border-dashed border-purple-400 rounded-lg bg-purple-50">
           <div className="text-center text-purple-700 mb-8">Stage 3: {stageDescription}</div>
@@ -92,7 +92,7 @@ const MyLibrary: React.FC<MyLibraryProps> = ({ stage, userName = "Learner" }) =>
 
   return (
     <div className="p-4 my-4">
-      <h2 className="text-2xl font-semibold text-center mb-2 text-gray-800">{userName}'s Library</h2>
+      <h2 className="text-2xl font-semibold text-center mb-2 text-gray-800">{userName}&apos;s Library</h2>
       {libraryElements}
     </div>
   );

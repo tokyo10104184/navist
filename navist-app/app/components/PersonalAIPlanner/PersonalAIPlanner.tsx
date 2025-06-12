@@ -7,25 +7,26 @@ const PersonalAIPlanner = () => {
   // For example, a state to show curriculum only after diagnosis is complete
   const [diagnosisComplete, setDiagnosisComplete] = React.useState(false);
 
-  const handleAnalysisComplete = () => {
-    // This would be triggered by the LearningDiagnosis component
-    setDiagnosisComplete(true);
-  };
+  // const handleAnalysisComplete = () => { // REMOVED as unused
+  //   // This would be triggered by the LearningDiagnosis component
+  //   setDiagnosisComplete(true);
+  // };
 
   return (
     <div className="p-4 bg-gray-100 min-h-screen">
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-indigo-700">Personal AI Learning Planner</h1>
         <p className="text-md text-gray-600">
-          Let's tailor a learning plan just for you!
+          Let&apos;s tailor a learning plan just for you!
         </p>
       </header>
 
       {/*
         Pass `handleAnalysisComplete` to LearningDiagnosis if you want to link them,
         or manage state via a shared context/store.
+        Example: <LearningDiagnosis onAnalysisComplete={() => setDiagnosisComplete(true)} />
       */}
-      <LearningDiagnosis /* onAnalysisComplete={handleAnalysisComplete} */ />
+      <LearningDiagnosis />
 
       {/* Conditionally render CurriculumDisplay or a placeholder */}
       {diagnosisComplete ? (

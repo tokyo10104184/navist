@@ -50,7 +50,7 @@ const DreamNoteVisualization: React.FC<DreamNoteVisualizationProps> = ({
         <div className="w-full md:w-1/2 space-y-4">
           {motivationalQuote && (
             <div className="p-3 bg-black bg-opacity-20 rounded-md">
-              <p className="text-sm italic">"{motivationalQuote}"</p>
+              <p className="text-sm italic">&quot;{motivationalQuote}&quot;</p>
             </div>
           )}
           {userNote && (

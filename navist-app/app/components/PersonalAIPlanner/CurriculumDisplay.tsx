@@ -1,10 +1,8 @@
 import React from 'react';
 
-interface CurriculumDisplayProps {
-  // Props can be added here later, e.g., curriculum data, progress data
-}
+// Removed empty interface CurriculumDisplayProps
 
-const CurriculumDisplay: React.FC<CurriculumDisplayProps> = () => {
+const CurriculumDisplay: React.FC = () => { // Changed to React.FC
   // Placeholder data
   const dailyTasks = [
     { id: 1, text: 'Read Chapter 1 of "React Deep Dive"', completed: true },

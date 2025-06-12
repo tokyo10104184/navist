@@ -2,11 +2,9 @@
 
 import React, { useState } from 'react';
 
-interface QuizInterfaceProps {
-  // Props can be added, e.g., quiz data, onAnswer callback
-}
+// Removed empty interface QuizInterfaceProps
 
-const QuizInterface: React.FC<QuizInterfaceProps> = () => {
+const QuizInterface: React.FC = () => { // Changed to React.FC
   const [showFlashcardAnswer, setShowFlashcardAnswer] = useState(false);
   const [fillBlankAnswer, setFillBlankAnswer] = useState('');
 

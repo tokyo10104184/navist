@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   // Basic styling for nav items
   const navLinkClasses = "px-3 py-2 rounded-md text-sm font-medium transition-colors";
-  const activeNavLinkClasses = "bg-gray-900 text-white"; // Example active style
+  // const activeNavLinkClasses = "bg-gray-900 text-white"; // Example active style - REMOVED as unused
   const inactiveNavLinkClasses = "text-gray-300 hover:bg-gray-700 hover:text-white";
 
   // In a real app, you'd use router.pathname or similar to determine active link

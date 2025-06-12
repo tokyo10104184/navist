@@ -42,7 +42,7 @@ const ShareableInfographic: React.FC<ShareableInfographicProps> = ({
     <div className="p-6 md:p-8 bg-gradient-to-br from-sky-400 to-indigo-600 text-white rounded-xl shadow-2xl max-w-2xl mx-auto font-sans">
       {/* Header */}
       <header className="text-center mb-6">
-        <h1 className="text-3xl md:text-4xl font-bold drop-shadow-lg">{userName}'s Weekly Learning Log</h1>
+        <h1 className="text-3xl md:text-4xl font-bold drop-shadow-lg">{userName}&apos;s Weekly Learning Log</h1>
         <p className="text-lg md:text-xl text-sky-100">
           {formatDate(weekStartDate)} - {formatDate(endDate)}
         </p>

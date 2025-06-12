@@ -38,7 +38,7 @@ const MasteryScore: React.FC<MasteryScoreProps> = ({
       )}
       {score >= 80 && (
         <p className="text-sm text-green-500 mt-2">
-          Excellent! You've demonstrated strong mastery of this topic.
+          Excellent! You&apos;ve demonstrated strong mastery of this topic.
         </p>
       )}
     </div>

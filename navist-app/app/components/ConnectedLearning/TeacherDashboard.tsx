@@ -29,7 +29,7 @@ const TeacherDashboard: React.FC<TeacherDashboardProps> = ({
 
   return (
     <div className="p-6 border rounded-lg shadow-lg bg-white">
-      <h2 className="text-2xl font-bold mb-2 text-green-700">Teacher's Dashboard</h2>
+      <h2 className="text-2xl font-bold mb-2 text-green-700">Teacher&apos;s Dashboard</h2>
       <p className="text-md text-gray-600 mb-6">Class: {className}</p>
 
       {/* Students Needing Attention */}
