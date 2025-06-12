@@ -5,11 +5,11 @@ import { CurriculumDisplay } from './CurriculumDisplay';
 const PersonalAIPlanner = () => {
   // State and logic for managing diagnosis and curriculum can be added here
   // For example, a state to show curriculum only after diagnosis is complete
-  const [diagnosisComplete, setDiagnosisComplete] = React.useState(false);
+  const [diagnosisComplete] = React.useState(false); // setDiagnosisComplete removed
 
   // const handleAnalysisComplete = () => { // REMOVED as unused
   //   // This would be triggered by the LearningDiagnosis component
-  //   setDiagnosisComplete(true);
+  //   // setDiagnosisComplete(true); // This was the usage
   // };
 
   return (
@@ -24,7 +24,10 @@ const PersonalAIPlanner = () => {
       {/*
         Pass `handleAnalysisComplete` to LearningDiagnosis if you want to link them,
         or manage state via a shared context/store.
-        Example: <LearningDiagnosis onAnalysisComplete={() => setDiagnosisComplete(true)} />
+        If the functionality to set diagnosisComplete is needed, it can be done directly:
+        Example: <LearningDiagnosis onAnalysisComplete={() => { /* logic to update diagnosisComplete directly or via a new state setter if re-enabled */ }} />
+        For now, diagnosisComplete is hardcoded to its initial state (false).
+        To make it interactive again, `setDiagnosisComplete` would need to be reintroduced and called.
       */}
       <LearningDiagnosis />
 
