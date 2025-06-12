@@ -21,14 +21,6 @@ const PersonalAIPlanner = () => {
         </p>
       </header>
 
-      {/*
-        Pass `handleAnalysisComplete` to LearningDiagnosis if you want to link them,
-        or manage state via a shared context/store.
-        If the functionality to set diagnosisComplete is needed, it can be done directly:
-        Example: <LearningDiagnosis onAnalysisComplete={() => { /* logic to update diagnosisComplete directly or via a new state setter if re-enabled */ }} />
-        For now, diagnosisComplete is hardcoded to its initial state (false).
-        To make it interactive again, `setDiagnosisComplete` would need to be reintroduced and called.
-      */}
       <LearningDiagnosis />
 
       {/* Conditionally render CurriculumDisplay or a placeholder */}
