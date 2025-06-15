@@ -7,6 +7,7 @@ import FlashcardDeck from '@/features/navist-loop/components/FlashcardDeck';
 import RetentionScore from '@/features/navist-loop/components/RetentionScore';
 import { FlashcardData } from '@/features/navist-loop/components/Flashcard'; // Ensure this path is correct
 import { Loader2 } from 'lucide-react'; // For loading spinner
+import { Button } from '@/components/ui/button';
 
 // MOCK_NOTIFICATIONS remains client-side as it's UI flavor
 const MOCK_NOTIFICATIONS = [

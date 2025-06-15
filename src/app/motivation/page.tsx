@@ -38,7 +38,7 @@ export default function MotivationPage() {
   };
 
   const handleSimulateProgress = () => {
-    const currentPoints = points; // Get points before simulation for comparison
+    // const currentPoints = points; // This variable was unused.
     simulateProgressInStore(); // Call the action from the store
 
     // The store now handles points and rank updates.
