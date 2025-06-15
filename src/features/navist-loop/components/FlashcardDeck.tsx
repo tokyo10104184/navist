@@ -30,7 +30,7 @@ export default function FlashcardDeck({ cards, onCardReviewed, onResetDeck }: Fl
     setCurrentIndex((prev) => (prev + 1) % cards.length);
   };
 
-  const goToPrev = ()_ => {
+  const goToPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
   };
 
