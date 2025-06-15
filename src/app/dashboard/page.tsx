@@ -13,7 +13,7 @@ const generateMockStudyPlan = (goal: Goal): StudyTask[] => {
   const plan: StudyTask[] = [];
   const startDate = new Date();
   const endDate = new Date(goal.targetDate);
-  let currentDate = new Date(startDate);
+  const currentDate = new Date(startDate);
   let idCounter = 0;
 
   const subjects = ['Math', 'Science', 'History', 'English'];

@@ -1,5 +1,5 @@
 // src/features/motivation/components/PositiveFeedback.tsx
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Sparkles } from "lucide-react"; // Icon for positive feedback
 
 interface PositiveFeedbackProps {

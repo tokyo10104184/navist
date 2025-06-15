@@ -9,7 +9,7 @@ export default function AIPersonalitySelector() {
 
   return (
     <div className="mb-4">
-      <p className="text-sm text-muted-foreground mb-2">Choose AI Buddy's Personality:</p>
+      <p className="text-sm text-muted-foreground mb-2">Choose AI Buddy&apos;s Personality:</p>
       <div className="flex space-x-2 flex-wrap gap-2"> {/* Added flex-wrap and gap for better layout */}
         {personalities.map((p) => (
           <Button

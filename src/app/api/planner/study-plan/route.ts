@@ -17,7 +17,7 @@ interface ApiStudyTask {
 const generateMockStudyPlanForApi = (goalDescription: string = "a new goal"): ApiStudyTask[] => {
   const plan: ApiStudyTask[] = [];
   const startDate = new Date();
-  let currentDate = new Date(startDate);
+  const currentDate = new Date(startDate);
   let idCounter = 0;
   const subjects = ['API Math', 'API Science', 'API History', 'API English', 'API Coding'];
   const tasks = ['Read API Chapter', 'Practice API Problems', 'Review API Notes', 'Complete API Exercise', 'Watch API Tutorial'];
