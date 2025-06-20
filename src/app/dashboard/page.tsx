@@ -17,15 +17,15 @@ const generateMockStudyPlan = (goal: Goal): StudyTask[] => {
   const currentDate = new Date(startDate);
   let idCounter = 0;
 
-  const subjects = ['Math', 'Science', 'History', 'English'];
-  const tasks = ['Read Chapter', 'Practice Problems', 'Review Notes', 'Write Summary'];
+  const subjects = ['数学', '理科', '歴史', '英語']; // Translated subjects
+  const tasks = ['章を読む', '練習問題を解く', 'ノートを復習', '要約を書く']; // Translated tasks (base)
 
   while (currentDate <= endDate && plan.length < 10) {
     plan.push({
       id: String(idCounter++),
       date: new Date(currentDate).toISOString().split('T')[0],
       subject: subjects[Math.floor(Math.random() * subjects.length)],
-      task: tasks[Math.floor(Math.random() * tasks.length)] + ' for ' + goal.description.substring(0,20) + "...",
+      task: tasks[Math.floor(Math.random() * tasks.length)] + ' (' + goal.description.substring(0,15) + "...) ", // Adjusted task string
       completed: Math.random() > 0.7,
     });
     currentDate.setDate(currentDate.getDate() + Math.floor(Math.random() * 3) + 1);
@@ -34,9 +34,9 @@ const generateMockStudyPlan = (goal: Goal): StudyTask[] => {
 };
 
 const initialProgressData: ProgressData[] = [
-  { name: 'Math', progress: 30 },
-  { name: 'Science', progress: 50 },
-  { name: 'History', progress: 20 },
+  { name: '数学', progress: 30 }, // Translated
+  { name: '理科', progress: 50 }, // Translated
+  { name: '歴史', progress: 20 }, // Translated
 ];
 // End of mock data functions
 
@@ -96,15 +96,15 @@ export default function DashboardPage() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold flex items-center">
           <LayoutDashboard className="mr-3 h-8 w-8 text-primary" />
-          Personal AI Planner
+          パーソナルAIプランナー
         </h1>
       </div>
 
-      <section aria-labelledby="goal-setting-title"> {/* Removed card-like padding from section if GoalSetter is a Card */}
+      <section aria-labelledby="goal-setting-title">
         <div className="flex items-center mb-4">
           <Target className="mr-2 h-6 w-6 text-muted-foreground" />
           <h2 id="goal-setting-title" className="text-2xl font-semibold">
-            Set Your Learning Goal
+            学習目標の設定
           </h2>
         </div>
         <GoalSetter onSetGoal={handleSetGoal} currentGoal={goal} />
@@ -116,7 +116,7 @@ export default function DashboardPage() {
             <div className="flex items-center mb-4">
               <ListChecks className="mr-2 h-6 w-6 text-muted-foreground" />
               <h2 id="study-plan-title" className="text-2xl font-semibold">
-                Your Study Schedule
+                あなたの学習スケジュール
               </h2>
             </div>
             <StudyPlanDisplay plan={studyPlan} onToggleComplete={toggleTaskCompletion} />
@@ -130,7 +130,7 @@ export default function DashboardPage() {
                   <PieChartIcon className="mr-2 h-6 w-6 text-muted-foreground" />
                 }
                 <h2 id="progress-overview-title" className="text-2xl font-semibold">
-                  Progress Overview
+                  進捗の概要
                 </h2>
               </div>
               <Button
@@ -138,7 +138,7 @@ export default function DashboardPage() {
                 onClick={() => setChartType(chartType === 'bar' ? 'pie' : 'bar')}
                 className="self-start sm:self-center" /* Ensures button alignment */
               >
-                Switch to {chartType === 'bar' ? 'Pie' : 'Bar'} Chart
+                {chartType === 'bar' ? '円グラフに切替' : '棒グラフに切替'}
               </Button>
             </div>
             <ProgressChart data={progressData} chartType={chartType} />
@@ -148,9 +148,9 @@ export default function DashboardPage() {
        {!goal && (
         <div className="text-center py-10 px-6 bg-card border rounded-lg shadow-sm">
           <Target className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h3 className="text-xl font-semibold text-foreground mb-2">No Goal Set Yet</h3>
+          <h3 className="text-xl font-semibold text-foreground mb-2">目標がまだ設定されていません</h3>
           <p className="text-muted-foreground">
-            Define your learning goal above to generate your personalized study plan and track your progress.
+            上で学習目標を設定すると、個別の学習プランが生成され、進捗を確認できます。
           </p>
         </div>
       )}

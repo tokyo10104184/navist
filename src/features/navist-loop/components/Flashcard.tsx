@@ -30,7 +30,7 @@ export default function Flashcard({ card, onFlip }: FlashcardProps) {
   if (!card) {
     return (
       <Card className="w-full max-w-md h-72 flex flex-col justify-center items-center p-6 shadow-lg">
-        <CardContent><p>No card to display.</p></CardContent>
+        <CardContent><p>表示するカードがありません。</p></CardContent>
       </Card>
     );
   }
@@ -41,25 +41,25 @@ export default function Flashcard({ card, onFlip }: FlashcardProps) {
         {/* Front of the card */}
         <Card className="absolute w-full h-full backface-hidden flex flex-col">
           <CardHeader className="flex-shrink-0">
-            <CardTitle className="text-center text-muted-foreground text-sm">Question</CardTitle>
+            <CardTitle className="text-center text-muted-foreground text-sm">問題</CardTitle>
           </CardHeader>
           <CardContent className="flex-grow flex items-center justify-center text-center text-xl font-semibold p-4 overflow-y-auto">
             <p>{card.question}</p>
           </CardContent>
           <CardFooter className="flex-shrink-0 flex justify-center p-4">
-            <Button onClick={handleFlip} variant="outline">Show Answer</Button>
+            <Button onClick={handleFlip} variant="outline">答えを見る</Button>
           </CardFooter>
         </Card>
         {/* Back of the card */}
         <Card className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col">
           <CardHeader className="flex-shrink-0">
-            <CardTitle className="text-center text-muted-foreground text-sm">Answer</CardTitle>
+            <CardTitle className="text-center text-muted-foreground text-sm">答え</CardTitle>
           </CardHeader>
           <CardContent className="flex-grow flex items-center justify-center text-center text-lg p-4 overflow-y-auto">
             <p>{card.answer}</p>
           </CardContent>
           <CardFooter className="flex-shrink-0 flex justify-center p-4">
-            <Button onClick={handleFlip} variant="outline">Show Question</Button>
+            <Button onClick={handleFlip} variant="outline">問題を見る</Button>
           </CardFooter>
         </Card>
       </div>

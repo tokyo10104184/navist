@@ -22,19 +22,19 @@ export default function LearningInfographic({ infographicData }: LearningInfogra
   return (
     <Card className="w-full shadow-lg overflow-hidden">
       <CardHeader className="bg-primary/10">
-        <CardTitle className="text-2xl">Learning Infographic: {infographicData.studentName}</CardTitle>
-        <CardDescription>A visual summary of learning activities and progress.</CardDescription>
+        <CardTitle className="text-2xl">{infographicData.studentName}さんの学習インフォグラフィック</CardTitle>
+        <CardDescription>学習活動と進捗の視覚的なまとめです。</CardDescription>
       </CardHeader>
       <CardContent className="p-6 grid md:grid-cols-2 gap-8">
         {/* Time Spent Per Subject */}
         <div className="h-80">
-          <h3 className="text-lg font-semibold mb-3 flex items-center"><BookOpen className="mr-2 h-5 w-5 text-primary" />Time Spent Per Subject (hours)</h3>
+          <h3 className="text-lg font-semibold mb-3 flex items-center"><BookOpen className="mr-2 h-5 w-5 text-primary" />科目別学習時間（時間）</h3>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={infographicData.timePerSubject} layout="vertical" margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" />
               <YAxis dataKey="name" type="category" width={80} />
-              <Tooltip formatter={(value: number) => `${value} hrs`} />
+              <Tooltip formatter={(value: number) => `${value} 時間`} />
               <Legend />
               <Bar dataKey="time" fill={COLORS[0]} barSize={20} />
             </BarChart>
@@ -43,7 +43,7 @@ export default function LearningInfographic({ infographicData }: LearningInfogra
 
         {/* Topic Distribution */}
         <div className="h-80">
-          <h3 className="text-lg font-semibold mb-3 flex items-center"><PieIcon className="mr-2 h-5 w-5 text-primary" />Topic Distribution (Tasks)</h3>
+          <h3 className="text-lg font-semibold mb-3 flex items-center"><PieIcon className="mr-2 h-5 w-5 text-primary" />トピック分布（タスク数）</h3>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -60,7 +60,7 @@ export default function LearningInfographic({ infographicData }: LearningInfogra
                   <Cell key={`cell-${index}`} fill={COLORS[(index + 1) % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip formatter={(value: number, name: string) => [`${value} tasks`, name]}/>
+              <Tooltip formatter={(value: number, name: string) => [`${value} タスク`, name]}/>
               <Legend />
             </PieChart>
           </ResponsiveContainer>
@@ -68,13 +68,13 @@ export default function LearningInfographic({ infographicData }: LearningInfogra
 
         {/* Progress Over Time - Full Width for better display */}
         <div className="h-80 md:col-span-2">
-          <h3 className="text-lg font-semibold mb-3 flex items-center"><Activity className="mr-2 h-5 w-5 text-primary" />Overall Progress Over Time</h3>
+          <h3 className="text-lg font-semibold mb-3 flex items-center"><Activity className="mr-2 h-5 w-5 text-primary" />総合進捗（期間別）</h3>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={infographicData.progressOverTime} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" />
               <YAxis domain={[0, 100]} />
-              <Tooltip formatter={(value: number) => [`${value}%`, "Score"]}/>
+              <Tooltip formatter={(value: number) => [`${value}%`, "スコア"]}/>
               <Legend />
               <Line type="monotone" dataKey="score" stroke={COLORS[2]} strokeWidth={2} activeDot={{ r: 8 }} />
             </LineChart>

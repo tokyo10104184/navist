@@ -10,12 +10,12 @@ import { Gift } from 'lucide-react';
 import { useUserStore } from '@/store/userStore'; // Import store
 
 const MOCK_POSITIVE_FEEDBACKS = [
-  "You're doing great, keep up the fantastic work!",
-  "Amazing effort! Every step forward counts.",
-  "Consistency is key, and you're nailing it!",
-  "Wow, look at how much you've learned!",
-  "Your dedication is inspiring!",
-  "Keep pushing your boundaries, you're a star!",
+  "素晴らしい調子です、その調子で頑張って！",
+  "すごい努力ですね！一歩一歩が大切です。",
+  "継続は力なり、完璧です！",
+  "わあ、たくさんのことを学びましたね！",
+  "あなたの熱意は素晴らしいです！",
+  "限界を押し広げ続けましょう、あなたはスターです！",
 ];
 
 export default function MotivationPage() {
@@ -58,15 +58,15 @@ export default function MotivationPage() {
   useEffect(() => {
     // This is just an example of reacting to points change for feedback.
     // Could be more sophisticated.
-    if (feedback.startsWith("Awesome!")) { // Check if it was the simulate progress feedback
-        setFeedback(`Progress simulated! You now have ${points} points and your rank is ${rank}. Keep it up!`);
+    if (feedback.startsWith("素晴らしい！") || feedback.startsWith("Awesome!")) { // Check if it was the simulate progress feedback, accommodate old text if needed during transition
+        setFeedback(`進捗をシミュレートしました！現在 ${points} ポイント、ランクは ${rank} です。この調子で頑張りましょう！`);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [points, rank]); // React to changes in points and rank from the store
 
   return (
     <div className="space-y-8 text-center max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold">Your Motivation Hub (Zustand)</h1>
+      <h1 className="text-3xl font-bold">モチベーションハブ (Zustand連携)</h1>
 
       {/* AvatarDisplay and PointsRankDisplay now use the store directly, no props needed */}
       <section aria-labelledby="avatar-section-title">

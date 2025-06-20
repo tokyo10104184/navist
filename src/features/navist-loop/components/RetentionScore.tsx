@@ -10,7 +10,7 @@ export default function RetentionScore({ score }: RetentionScoreProps) {
 
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-card text-center">
-      <h3 className="text-lg font-semibold mb-2 text-card-foreground">Current Retention Score</h3>
+      <h3 className="text-lg font-semibold mb-2 text-card-foreground">現在の定着度スコア</h3>
       <p className="text-3xl font-bold mb-3 text-primary">{normalizedScore}%</p>
       <Progress value={normalizedScore} className="w-full [&>div]:bg-primary" />
     </div>

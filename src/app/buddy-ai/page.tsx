@@ -10,7 +10,7 @@ import { useAIBuddyStore } from '@/store/aiBuddyStore'; // Import store
 
 export default function BuddyAIPage() {
   const [messages, setMessages] = useState<Message[]>([
-    { id: '0', text: 'Hello! How can I help you with your studies today?', sender: 'ai' },
+    { id: '0', text: 'こんにちは！今日の勉強で何かお手伝いできることはありますか？', sender: 'ai' },
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,11 +25,11 @@ export default function BuddyAIPage() {
     // For simplicity, let's assume any change after initial load triggers this.
     // A more robust way would be to compare previous vs current personality if needed.
     if (messages.length > 1 || (messages.length === 1 && messages[0].id !== '0')) { // Avoid on initial load/message
-        const lastMessageIsPersonalityChange = messages[messages.length-1]?.text.includes("buddy now!");
+        const lastMessageIsPersonalityChange = messages[messages.length-1]?.text.includes("バディになりますね！"); // Updated check string
         if (!lastMessageIsPersonalityChange) { // Avoid sending duplicate messages if already sent
             const newMessage: Message = {
                 id: String(Date.now()),
-                text: `Okay, I'll be your ${selectedPersonality} buddy now! (Store updated)`,
+                text: `わかりました、これからは ${selectedPersonality} バディになりますね！ (設定変更)`,
                 sender: 'ai'
             };
             setMessages(prev => [...prev, newMessage]);
@@ -46,7 +46,7 @@ export default function BuddyAIPage() {
 
     setTimeout(() => {
       // Use selectedPersonality from store for the AI response
-      const aiResponseText = `(${selectedPersonality} AI): You said: "${text}". This is a dummy response reflecting the new store state.`;
+      const aiResponseText = `(${selectedPersonality} AI): 「${text}」ですね。これはダミーレスポンスです...`;
       const newAiMessage: Message = { id: String(Date.now() + 1), text: aiResponseText, sender: 'ai' };
       setMessages((prevMessages) => [...prevMessages, newAiMessage]);
       setIsLoading(false);
@@ -58,7 +58,7 @@ export default function BuddyAIPage() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-10rem)]"> {/* Adjust height as needed */}
-      <h1 className="text-2xl font-bold mb-4">Buddy AI Chat (Zustand)</h1>
+      <h1 className="text-2xl font-bold mb-4">バディAI チャット (Zustand連携)</h1>
       <AIPersonalitySelector /> {/* No props needed now */}
       <ChatLog messages={messages} />
       <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
