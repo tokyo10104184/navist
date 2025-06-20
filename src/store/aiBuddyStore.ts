@@ -1,7 +1,9 @@
 // src/store/aiBuddyStore.ts
 import { create } from 'zustand';
 
-export const AI_PERSONALITIES = ['Friendly', 'Logical', 'Energetic', 'Calm', 'Socratic'];
+// export const AI_PERSONALITIES = ['Friendly', 'Logical', 'Energetic', 'Calm', 'Socratic'];
+export const AI_PERSONALITIES = ['フレンドリー', '論理的', '元気いっぱい', '穏やか', 'ソクラテス風'];
+
 
 interface AIBuddyState {
   selectedPersonality: string;

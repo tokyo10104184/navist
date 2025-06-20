@@ -23,14 +23,14 @@ export default function ChatInput({ onSendMessage, isLoading }: ChatInputProps) 
     <form onSubmit={handleSubmit} className="flex space-x-2">
       <Input
         type="text"
-        placeholder="Type your message..."
+        placeholder="メッセージを入力..."
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         disabled={isLoading}
         className="flex-grow"
       />
       <Button type="submit" disabled={isLoading}>
-        {isLoading ? 'Sending...' : 'Send'}
+        {isLoading ? '送信中...' : '送信'}
       </Button>
     </form>
   );

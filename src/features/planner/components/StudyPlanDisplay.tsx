@@ -16,12 +16,12 @@ interface StudyPlanDisplayProps {
 
 export default function StudyPlanDisplay({ plan, onToggleComplete }: StudyPlanDisplayProps) {
   if (!plan || plan.length === 0) {
-    return <p className="text-muted-foreground">No study plan generated yet. Set a goal to see your plan!</p>;
+    return <p className="text-muted-foreground">まだ学習プランがありません。目標を設定してプランを表示しましょう！</p>;
   }
 
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-card">
-      <h3 className="text-lg font-semibold mb-3 text-card-foreground">Your Study Plan</h3>
+      <h3 className="text-lg font-semibold mb-3 text-card-foreground">あなたの学習プラン</h3>
       <div className="space-y-3">
         {plan.map((item) => (
           <div key={item.id} className={`p-3 rounded-md ${item.completed ? 'bg-green-100 dark:bg-green-900/50' : 'bg-muted/50'}`}>

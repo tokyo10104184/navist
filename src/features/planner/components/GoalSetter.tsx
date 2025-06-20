@@ -33,11 +33,11 @@ export default function GoalSetter({ onSetGoal, currentGoal }: GoalSetterProps) 
     <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded-lg shadow-sm bg-card">
       <div>
         <label htmlFor="goalDescription" className="block text-sm font-medium text-card-foreground mb-1">
-          Learning Goal
+          学習目標
         </label>
         <Textarea
           id="goalDescription"
-          placeholder="e.g., Master Chapter 5 of Algebra"
+          placeholder="例：代数の第5章をマスターする"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
@@ -46,7 +46,7 @@ export default function GoalSetter({ onSetGoal, currentGoal }: GoalSetterProps) 
       </div>
       <div>
         <label htmlFor="targetDate" className="block text-sm font-medium text-card-foreground mb-1">
-          Target Date
+          目標日
         </label>
         <Input
           id="targetDate"
@@ -58,7 +58,7 @@ export default function GoalSetter({ onSetGoal, currentGoal }: GoalSetterProps) 
         />
       </div>
       <Button type="submit" className="w-full">
-        {currentGoal ? 'Update Goal' : 'Set Goal'}
+        {currentGoal ? '目標を更新' : '目標を設定'}
       </Button>
     </form>
   );

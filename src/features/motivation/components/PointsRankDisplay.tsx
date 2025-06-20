@@ -12,12 +12,12 @@ export default function PointsRankDisplay() {
       <CardHeader>
         <CardTitle className="flex items-center justify-center space-x-2">
           <TrendingUp className="h-6 w-6 text-primary" />
-          <span>Your Progress</span>
+          <span>あなたの成長</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-2">
-        <p className="text-3xl font-bold text-primary">{points.toLocaleString()} Points</p>
-        <p className="text-lg text-muted-foreground">Rank: {rank}</p>
+        <p className="text-3xl font-bold text-primary">{points.toLocaleString()} ポイント</p>
+        <p className="text-lg text-muted-foreground">ランク：{rank}</p>
       </CardContent>
     </Card>
   );

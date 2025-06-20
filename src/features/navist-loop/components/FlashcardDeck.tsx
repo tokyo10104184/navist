@@ -21,7 +21,7 @@ export default function FlashcardDeck({ cards, onCardReviewed, onResetDeck }: Fl
   }, [currentIndex, cards]);
 
   if (!cards || cards.length === 0) {
-    return <p className="text-muted-foreground">No flashcards in this deck.</p>;
+    return <p className="text-muted-foreground">このデッキにフラッシュカードはありません。</p>;
   }
 
   const currentCard = cards[currentIndex];
@@ -47,30 +47,30 @@ export default function FlashcardDeck({ cards, onCardReviewed, onResetDeck }: Fl
 
   return (
     <div className="flex flex-col items-center space-y-4 w-full">
-      <p className="text-sm text-muted-foreground">Card {currentIndex + 1} of {cards.length}</p>
+      <p className="text-sm text-muted-foreground">カード {currentIndex + 1} / {cards.length}</p>
       <Flashcard card={currentCard} onFlip={handleCardFlip} />
 
       {isCardFlipped && (
         <div className="flex space-x-3 mt-4 animate-fadeIn">
             <Button onClick={() => handleFeedback(true)} variant="default" className="bg-green-500 hover:bg-green-600 text-white">
-                I Remembered!
+                覚えた！
             </Button>
             <Button onClick={() => handleFeedback(false)} variant="destructive">
-                I Forgot
+                忘れた
             </Button>
         </div>
       )}
 
       <div className="flex justify-between w-full max-w-md mt-4">
-        <Button onClick={goToPrev} variant="outline" size="icon" aria-label="Previous Card" disabled={cards.length <= 1}>
+        <Button onClick={goToPrev} variant="outline" size="icon" aria-label="前のカード" disabled={cards.length <= 1}>
           <ChevronLeft className="h-5 w-5" />
         </Button>
         {onResetDeck && (
-             <Button onClick={onResetDeck} variant="ghost" size="icon" aria-label="Reset Deck">
+             <Button onClick={onResetDeck} variant="ghost" size="icon" aria-label="デッキをリセット">
                 <RotateCcw className="h-5 w-5" />
             </Button>
         )}
-        <Button onClick={goToNext} variant="outline" size="icon" aria-label="Next Card" disabled={cards.length <= 1}>
+        <Button onClick={goToNext} variant="outline" size="icon" aria-label="次のカード" disabled={cards.length <= 1}>
           <ChevronRight className="h-5 w-5" />
         </Button>
       </div>

@@ -17,12 +17,12 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 
 export default function ProgressChart({ data, chartType = 'bar' }: ProgressChartProps) {
   if (!data || data.length === 0) {
-    return <p className="text-muted-foreground">No progress data available yet.</p>;
+    return <p className="text-muted-foreground">進捗データがまだありません。</p>;
   }
 
   return (
     <div className="p-4 border rounded-lg shadow-sm bg-card h-80"> {/* Fixed height for chart container */}
-      <h3 className="text-lg font-semibold mb-3 text-card-foreground">Your Progress</h3>
+      <h3 className="text-lg font-semibold mb-3 text-card-foreground">あなたの進捗</h3>
       <ResponsiveContainer width="100%" height="100%">
         {chartType === 'bar' ? (
           <BarChart data={data} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}> {/* Adjusted margins */}

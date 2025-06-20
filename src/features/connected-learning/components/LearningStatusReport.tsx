@@ -27,18 +27,18 @@ export default function LearningStatusReport({ reportData }: LearningStatusRepor
   return (
     <Card className="w-full shadow-lg">
       <CardHeader className="bg-muted/30">
-        <CardTitle className="text-2xl">Learning Status Report for {reportData.studentName}</CardTitle>
-        <CardDescription>Period: {reportData.reportingPeriod} | Total Study Time: <span className="font-semibold">{reportData.timeSpentTotal}</span></CardDescription>
+        <CardTitle className="text-2xl">{reportData.studentName}さんの学習状況レポート</CardTitle>
+        <CardDescription>期間：{reportData.reportingPeriod} | 総学習時間：<span className="font-semibold">{reportData.timeSpentTotal}</span></CardDescription>
       </CardHeader>
       <CardContent className="p-6 space-y-6">
         <div>
-          <h3 className="text-xl font-semibold mb-3 flex items-center"><Clock className="mr-2 h-5 w-5 text-primary" />Subject Focus & Progress</h3>
+          <h3 className="text-xl font-semibold mb-3 flex items-center"><Clock className="mr-2 h-5 w-5 text-primary" />科目別フォーカスと進捗</h3>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Subject</TableHead>
-                <TableHead>Focus Time</TableHead>
-                <TableHead className="w-[150px]">Progress</TableHead>
+                <TableHead>科目</TableHead>
+                <TableHead>集中時間</TableHead>
+                <TableHead className="w-[150px]">進捗</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -60,7 +60,7 @@ export default function LearningStatusReport({ reportData }: LearningStatusRepor
 
         {reportData.recentAchievements.length > 0 && (
           <div>
-            <h3 className="text-xl font-semibold mb-3 flex items-center"><CheckCircle className="mr-2 h-5 w-5 text-green-600" />Recent Achievements</h3>
+            <h3 className="text-xl font-semibold mb-3 flex items-center"><CheckCircle className="mr-2 h-5 w-5 text-green-600" />最近の達成事項</h3>
             <ul className="list-disc list-inside space-y-1 pl-2">
               {reportData.recentAchievements.map((ach, index) => (
                 <li key={index} className="text-muted-foreground">{ach}</li>
@@ -71,7 +71,7 @@ export default function LearningStatusReport({ reportData }: LearningStatusRepor
 
         {reportData.areasForAttention.length > 0 && (
           <div>
-            <h3 className="text-xl font-semibold mb-3 flex items-center"><AlertTriangle className="mr-2 h-5 w-5 text-destructive" />Areas for Attention</h3>
+            <h3 className="text-xl font-semibold mb-3 flex items-center"><AlertTriangle className="mr-2 h-5 w-5 text-destructive" />要点・復習エリア</h3>
             <ul className="list-disc list-inside space-y-1 pl-2">
               {reportData.areasForAttention.map((area, index) => (
                 <li key={index} className="text-muted-foreground">{area}</li>
