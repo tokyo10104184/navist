@@ -17,10 +17,10 @@ const inter = Inter({ subsets: ["latin"] });
 // e.g. via a context or useEffect, or ensure this static metadata is still picked up.
 // Next.js generally recommends keeping metadata exports in Server Components.
 // For simplicity, we'll assume this static metadata is acceptable.
-export const metadata: Metadata = {
-  title: "Navist",
-  description: "AI Learning Companion",
-};
+// export const metadata: Metadata = { // This line is removed due to 'use client'
+//   title: "Navist",
+//   description: "AI Learning Companion",
+// };
 
 export default function RootLayout({
   children,
