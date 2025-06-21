@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 'use client'; // Required for useState
 
-import type { Metadata } from "next"; // Keep for static metadata if parts are still static
+// import type { Metadata } from "next"; // Removed as metadata object is also removed
 import { Inter } from "next/font/google";
 import "./globals.css"; // Tailwind base, etc.
 import Header from "@/components/shared/Header";

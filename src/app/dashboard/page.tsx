@@ -7,7 +7,8 @@ import StudyPlanDisplay, { StudyTask } from '@/features/planner/components/Study
 import ProgressChart, { ProgressData } from '@/features/planner/components/ProgressChart';
 import OverallProgress from '@/features/motivation/components/OverallProgress'; // Import new component
 import { Button } from '@/components/ui/button';
-import { LayoutDashboard, Target, ListChecks, BarChart2, PieChart as PieChartIcon, Activity, Trophy, Users } from 'lucide-react';
+// Removed Activity, Trophy, Users as they are unused for now
+import { LayoutDashboard, Target, ListChecks, BarChart2, PieChart as PieChartIcon } from 'lucide-react';
 
 // Mock data generation functions (ensure these are correctly defined as in previous versions)
 const generateMockStudyPlan = (goal: Goal): StudyTask[] => {
