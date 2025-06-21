@@ -2,7 +2,7 @@
 "use client"
 
 import * as React from "react"
-import { X } from "lucide-react"
+// import { X } from "lucide-react" // Removed X as it's not used in the dummy version
 import { cn } from "@/lib/utils"
 
 // Dummy Dialog component

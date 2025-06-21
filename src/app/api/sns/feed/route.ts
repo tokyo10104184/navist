@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import type { FeedPost, FeedPostList, UserProfile } from '@/types/sns'; // Assuming UserProfile is also needed for author details
 
 // Mock database for feed posts
+// eslint-disable-next-line prefer-const
 let mockFeedPosts: FeedPostList = [
   {
     postId: 'post1',
@@ -60,7 +61,7 @@ const currentUserMock: Pick<UserProfile, 'userId' | 'username' | 'avatarUrl' | '
 };
 
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) { // Changed request to _request
   // In a real app, you might have pagination, filtering, etc.
   // For now, just return all mock posts sorted by newest first.
   const sortedPosts = [...mockFeedPosts].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
