@@ -61,7 +61,7 @@ const currentUserMock: Pick<UserProfile, 'userId' | 'username' | 'avatarUrl' | '
 };
 
 
-export async function GET(_request: Request) { // Changed request to _request
+export async function GET() { // Removed _request: Request as it's unused
   // In a real app, you might have pagination, filtering, etc.
   // For now, just return all mock posts sorted by newest first.
   const sortedPosts = [...mockFeedPosts].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
