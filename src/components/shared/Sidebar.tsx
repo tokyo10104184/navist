@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, LayoutDashboard, Brain, Zap, Flame, BarChart3, X } from 'lucide-react'; // Added X for close
+import { UserCircle, Rss, LayoutDashboard, Brain, Zap, Flame, BarChart3, X } from 'lucide-react'; // Added UserCircle, Rss, removed Home
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '/', label: 'ホーム', icon: Home },
+  { href: '/', label: 'プロフィール', icon: UserCircle },
+  { href: '/feed', label: 'フィード', icon: Rss },
   { href: '/dashboard', label: '学習プランナー', icon: LayoutDashboard },
   { href: '/buddy-ai', label: 'バディAI', icon: Brain },
   { href: '/navist-loop', label: '記憶ループ', icon: Zap },

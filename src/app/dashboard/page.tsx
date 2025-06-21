@@ -232,6 +232,33 @@ export default function DashboardPage() {
           </p>
         </div>
       )}
+
+      {/* Temporary button for PoC of updating study hours */}
+      <div className="mt-8 p-4 border-t border-dashed">
+        <h3 className="text-sm font-semibold text-muted-foreground mb-2">【開発用デモ】</h3>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={async () => {
+            try {
+              const response = await fetch('/api/sns/profile/me', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ incrementStudyHours: 1 }),
+              });
+              if (!response.ok) {
+                throw new Error('Failed to increment study hours');
+              }
+              alert('総学習時間に1時間追加しました。プロフィールページで確認してください。');
+            } catch (error) {
+              console.error(error);
+              alert('学習時間の更新に失敗しました。');
+            }
+          }}
+        >
+          総学習時間を1時間増やす (デモ)
+        </Button>
+      </div>
     </div>
   );
 }
