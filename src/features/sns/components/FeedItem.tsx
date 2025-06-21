@@ -5,15 +5,18 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Heart, Repeat, BarChart2, Upload } from 'lucide-react'; // Example icons
-import { formatDistanceToNow } from 'date-fns';
-import { ja } from 'date-fns/locale'; // For Japanese "time ago" format
+// import { formatDistanceToNow } from 'date-fns'; // Removed date-fns
+// import { ja } from 'date-fns/locale'; // Removed date-fns
 
 interface FeedItemProps {
   post: FeedPost;
 }
 
 export default function FeedItem({ post }: FeedItemProps) {
-  const timeAgo = post.timestamp ? formatDistanceToNow(new Date(post.timestamp), { addSuffix: true, locale: ja }) : '';
+  // Simplified timestamp display
+  const displayTimestamp = post.timestamp
+    ? new Date(post.timestamp).toLocaleString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+    : '';
 
   return (
     <Card className="mb-4">
@@ -30,8 +33,8 @@ export default function FeedItem({ post }: FeedItemProps) {
                 <span className="text-xs text-muted-foreground">@{post.author.userHandle}</span>
               )}
               <span className="text-xs text-muted-foreground">·</span>
-              <span className="text-xs text-muted-foreground hover:underline cursor-pointer" title={new Date(post.timestamp).toLocaleString()}>
-                {timeAgo}
+              <span className="text-xs text-muted-foreground hover:underline cursor-pointer" title={new Date(post.timestamp).toISOString()}>
+                {displayTimestamp}
               </span>
             </div>
             {post.content && <p className="text-sm text-foreground mt-1 whitespace-pre-wrap">{post.content}</p>}
