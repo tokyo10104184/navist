@@ -30,10 +30,10 @@ const mockUserProfiles: Record<string, UserProfile> = {
 };
 
 export async function GET(
-  request: Request,
-  { params }: { params: { userId: string } }
+  _request: Request, // Marked as unused
+  context: { params: { userId: string } }
 ) {
-  const userId = params.userId;
+  const userId = context.params.userId;
 
   if (mockUserProfiles[userId]) {
     return NextResponse.json(mockUserProfiles[userId]);
@@ -50,9 +50,9 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { userId: string } }
+  context: { params: { userId: string } }
 ) {
-  const userId = params.userId;
+  const userId = context.params.userId;
   const data = await request.json();
 
   // Simulate updating the current user's profile (e.g., 'user123')
