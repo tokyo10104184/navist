@@ -1,5 +1,5 @@
 // src/app/api/sns/profile/[userId]/route.ts
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server'; // Import NextRequest
 import type { UserProfile } from '@/types/sns';
 
 // Mock database
@@ -30,7 +30,7 @@ const mockUserProfiles: Record<string, UserProfile> = {
 };
 
 export async function GET(
-  _request: Request, // Marked as unused
+  _request: NextRequest, // Changed Request to NextRequest, marked as unused
   context: { params: { userId: string } }
 ) {
   const userId = context.params.userId;
@@ -49,7 +49,7 @@ export async function GET(
 }
 
 export async function PUT(
-  request: Request,
+  request: NextRequest, // Changed Request to NextRequest
   context: { params: { userId: string } }
 ) {
   const userId = context.params.userId;
