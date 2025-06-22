@@ -82,7 +82,7 @@ const DialogClose = React.forwardRef<
         return React.cloneElement(children, {
             // Attempt to find onClick and chain it with onOpenChange if Dialog's onOpenChange is available
             // This is a very rough approximation.
-            ...children.props,
+            ...(children.props || {}),
         } as React.Attributes);
     }
   // This won't render a functional close button on its own without onOpenChange from Dialog.
