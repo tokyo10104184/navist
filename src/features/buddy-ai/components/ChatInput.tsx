@@ -5,10 +5,11 @@ import { useState } from 'react'; // Will need 'use client' on page
 
 interface ChatInputProps {
   onSendMessage: (text: string) => void;
-  isLoading?: boolean; // For future API calls
+  isLoading?: boolean;
+  placeholder?: string;
 }
 
-export default function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
+export default function ChatInput({ onSendMessage, isLoading, placeholder = "メッセージを入力..." }: ChatInputProps) {
   const [inputText, setInputText] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -23,7 +24,7 @@ export default function ChatInput({ onSendMessage, isLoading }: ChatInputProps) 
     <form onSubmit={handleSubmit} className="flex space-x-2">
       <Input
         type="text"
-        placeholder="メッセージを入力..."
+        placeholder={placeholder} // Use the prop here
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         disabled={isLoading}
